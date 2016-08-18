@@ -1,0 +1,10 @@
+.idea
+target
+*.jar
+*.bat
+*.sh
+*.iml
+*.txt
+*.db
+cfg/
+out/
