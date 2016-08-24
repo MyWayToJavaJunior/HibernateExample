@@ -1,8 +1,7 @@
-package com.ketaetc.hibernate.example;
+package com.ketaetc.hibernate.example.config;
 
 /**
  * Author: ketaetc (ketaetc@gmail.com)
- * Date: 19.08.16 0:35
  */
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -23,16 +22,16 @@ public class HibernateConnector {
         /**
          * Connection Information..
          */
-//        cfg.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
-//        cfg.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/");
-//        cfg.setProperty("hibernate.connection.username", "root");
-//        cfg.setProperty("hibernate.connection.password", "123456");
-//        cfg.setProperty("hibernate.show_sql", "true");
+        cfg.setProperty("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
+        cfg.setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/");
+        cfg.setProperty("hibernate.connection.username", "testuser");
+        cfg.setProperty("hibernate.connection.password", "123456");
+        cfg.setProperty("hibernate.show_sql", "true");
 
         /**
          * Mapping Resources..
          */
-        cfg.addResource("com/ketaetc/hibernate/example/test.hbm.xml");
+        cfg.addResource("com/ketaetc/hibernate/example/pojo/Student.hbm.xml");
 
         sessionFactory = cfg.buildSessionFactory();
     }
