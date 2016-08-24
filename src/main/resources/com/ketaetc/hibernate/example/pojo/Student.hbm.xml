@@ -8,6 +8,7 @@
             <column name="id" />
             <generator class="identity" />
         </id>
+        <timestamp name="lastupdated" access="field" column="lastupdated"/>
         <property name="name" type="string">
             <column name="name" length="50" />
         </property>

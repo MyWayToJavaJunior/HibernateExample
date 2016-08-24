@@ -3,6 +3,7 @@ package com.ketaetc.hibernate.example.service;
 import com.ketaetc.hibernate.example.dao.StudentDAO;
 import com.ketaetc.hibernate.example.pojo.Student;
 
+import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -29,6 +30,8 @@ public class DbOperations {
                 System.out.println("Student Gender : " + student.getGender());
                 System.out.println("Student Class : " + student.getClass_());
                 System.out.println("Student Rollnumber : " + student.getRollnumber());
+                DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                System.out.println("Student Lastupdated : " + df.format(student.getLastUpdated()));
             }
         }
         dbOperations.updateStudent(createStudent.getId());
@@ -47,6 +50,8 @@ public class DbOperations {
         s.setName("ketaetc");
         s.setClass_("1");
         s.setRollnumber((int)(Math.random()*2147483647));
+        Date curD = Calendar.getInstance().getTime();
+        s.setLastUpdated(new Timestamp(curD.getTime()));
         studentDAO.addStudent(s);
         return s;
     }

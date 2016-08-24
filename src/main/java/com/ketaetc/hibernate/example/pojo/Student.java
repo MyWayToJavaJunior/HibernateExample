@@ -1,5 +1,6 @@
 package com.ketaetc.hibernate.example.pojo;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -81,6 +82,15 @@ public class Student implements java.io.Serializable {
 
     public void setClass_(String class_) {
         this.class_ = class_;
+    }
+
+    @Column(name = "lastupdated")
+    public Date getLastUpdated() {
+        return this.lastupdated;
+    }
+
+    public void setLastUpdated (Timestamp lastupdated) {
+        this.lastupdated = new Date(lastupdated.getTime());
     }
 
 }
