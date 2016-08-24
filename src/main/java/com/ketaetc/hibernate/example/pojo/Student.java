@@ -36,7 +36,10 @@ public class Student implements java.io.Serializable {
         this.lastupdated = lastupdated;
     }
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
 
+    @Column(name = "id", unique = true, nullable = false)
     public Integer getId() {
         return this.id;
     }
@@ -45,6 +48,7 @@ public class Student implements java.io.Serializable {
         this.id = id;
     }
 
+    @Column(name = "name", length = 50)
     public String getName() {
         return this.name;
     }
@@ -53,6 +57,7 @@ public class Student implements java.io.Serializable {
         this.name = name;
     }
 
+    @Column(name = "rollnumber")
     public Integer getRollnumber() {
         return this.rollnumber;
     }
@@ -61,6 +66,7 @@ public class Student implements java.io.Serializable {
         this.rollnumber = rollnumber;
     }
 
+    @Column(name = "gender")
     public Byte getGender() {
         return this.gender;
     }
@@ -69,6 +75,7 @@ public class Student implements java.io.Serializable {
         this.gender = gender;
     }
 
+    @Column(name = "class", length = 50)
     public String getClass_() {
         return this.class_;
     }
@@ -77,6 +84,7 @@ public class Student implements java.io.Serializable {
         this.class_ = class_;
     }
 
+    @Column(name = "lastupdated")
     public Date getLastUpdated() {
         return this.lastupdated;
     }
